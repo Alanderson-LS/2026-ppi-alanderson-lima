@@ -25,7 +25,6 @@ O primeiro projeto tem como objetivo fornecer um ambiente simples para registrar
 - Listagem de problemas cadastrados.
 - Edição de problemas criados pelo próprio usuário.
 - Exclusão de problemas criados pelo próprio usuário.
-- Estrutura dos Problemas
 
 ---
 ## 📖Cada problema poderá conter informações como:
