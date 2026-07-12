@@ -36,4 +36,10 @@ input[type=submit] { align-self: start; min-width: 10em; }
 .hero {justify-content: center;background:linear-gradient( rgba(0,0,0,.55), rgba(0,0,0,.75)),url("img/math_bg.png"); background-size: cover; background-position: center; background-repeat: no-repeat; display: flex; flex-direction: column; align-items: center; height: 420px; width: 100%;}
 .hero h1 { font-family: serif;margin: 0;  background: linear-gradient(to right, #ffffff, #858585,#858585, #ffffff); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: animate-gradient 5s linear infinite; background-size: 200%; font-size: 4.5rem; font-weight: 700;}
 .hero p {margin-top: 0;color: #ffffff; font-size: large; margin: 0; background: linear-gradient(to right, #ffffff, #858585, #858585, #ffffff); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: animate-gradient 5s linear infinite; background-size: 200%; font-size: 1.3rem;}
-
+.problem-card{background: white; border-radius: 14px; padding: 25px; margin: 30px 0; box-shadow: 0 8px 20px rgba(0,0,0,.15); transition: .25s;}
+.problem-card h2{font-size: 1.8rem; margin-bottom: 12px;}
+.problem-card:hover{transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,.25);}
+.problem-footer{text-align : right;}
+.problem-footer span{margin-right: 30px;}
+.subject-difficulty {background: #ececec;border-radius: 30px;padding: 4px 10px;font-size: .9rem;}
+.statement{margin: 20px 0; line-height: 1.7;}

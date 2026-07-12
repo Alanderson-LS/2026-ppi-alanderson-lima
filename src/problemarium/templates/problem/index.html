@@ -9,23 +9,32 @@
 
 {% block content %}
   {% for problem in problems %}
-    <article class="problem">
-      <header>
-        <div>
-          <h1>{{ problem['title'] }}</h1>
-          <div class="about">by {{ problem['username'] }} on {{ problem['created'].strftime('%Y-%m-%d') }}</div>
-        </div>
+    <article class="problem-card">
+        <div class="problem-header">
+          <div>
+            <h2>{{ problem['title'] }}</h2>
+            <span class="subject-difficulty">
+              {{ problem['subject']}} | {{ problem['difficulty']}}
+            </span>
+          </div>
+          <p class="statement">
+            {{ problem['statement']}}
+          </p>
+          <details>
+            <summary>Mostrar resposta</summary>
+            <p>{{ problem['answer'] }}</p>
+            <p>{{ problem['resolution'] }}</p>
+        </details>
+        <div class="problem-footer">
+          <span>
+            👤 {{ problem['username']}}
+          </span>
+          <span>
+            📅{{ problem['created'].strftime('%d/%m/%Y')}}
+          </span>
         {% if g.user['id'] == problem['author_id'] %}
           <a class="action" href="{{ url_for('problem.update', id=problem['id']) }}">Editar</a>
         {% endif %}
-
-      </header>
-      <p class="statement">{{ problem['statement'] }}</p>
-      <p class="difficulty">{{ problem['difficulty' ] }}</p>
-      <p class="subject">{{ problem['subject' ] }}</p>
-      <p class="answer">{{ problem['answer' ] }}</p>
-      <p class="resolution">{{ problem['resolution' ] }}</p>
-
     </article>
     {% if not loop.last %}
       <hr>
