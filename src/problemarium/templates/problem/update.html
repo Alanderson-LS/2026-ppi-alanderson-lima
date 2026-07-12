@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Edit "{{ problem['title'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="title">Titulo</label>
+    <input name="title" id="title"
+      value="{{ request.form['title'] or problem['title'] }}" required>
+    <label for="statement">Enunciado</label>
+    <textarea name="statement" id="statement" required>{{ request.form.get('statement', problem['statement']) }}</textarea>
+    <label for="subject">Assunto</label>
+    <input name="subject" id="subject" value="{{ request.form.get('subject', problem['subject']) }}" required>
+    <label for="difficulty">Dificuldade</label>
+    <select name ="difficulty" required> 
+      <option value="" select disabled selected>Selecione uma dificuldade</option>
+      <option value="easy" {% if problem['difficulty'] == 'easy' %}selected{% endif %}>Fácil</option>
+      <option value="medium" {% if problem['difficulty'] == 'medium' %}selected{% endif %}>Médio</option>
+      <option value="hard" {% if problem['difficulty'] == 'hard' %}selected{% endif %}>Difícil</option>
+    </select>
+    <label for="answer">Resposta</label>
+    <textarea name="answer" id="answer" required>{{ request.form.get('answer', problem['answer']) }}</textarea>
+    <label for="resolution">Resolução (opcional)</label>
+    <textarea name="resolution" id="resolution">{{ request.form.get('resolution', problem['resolution']) }}</textarea>
+    <a class="button" href="{{ url_for('problem.index') }}">Cancelar</a>
+    <input type="submit" value="Salvar">  
+  </form>
+  <hr>
+  <form action="{{ url_for('problem.delete', id=problem['id']) }}" method="post">
+    <input class="danger" type="submit" value="Delete" onclick="return confirm('Tem certeza?');">
+  </form>
+{% endblock %}

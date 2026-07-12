@@ -15,11 +15,10 @@
           <h1>{{ problem['title'] }}</h1>
           <div class="about">by {{ problem['username'] }} on {{ problem['created'].strftime('%Y-%m-%d') }}</div>
         </div>
-      {#
-        <!--{% if g.user['id'] == problem['author_id'] %}
-          <a class="action" href="{{ url_for('problem.update', id=problem['id']) }}">Edit</a>
-        {% endif %}-->
-      #}
+        {% if g.user['id'] == problem['author_id'] %}
+          <a class="action" href="{{ url_for('problem.update', id=problem['id']) }}">Editar</a>
+        {% endif %}
+
       </header>
       <p class="statement">{{ problem['statement'] }}</p>
       <p class="difficulty">{{ problem['difficulty' ] }}</p>
