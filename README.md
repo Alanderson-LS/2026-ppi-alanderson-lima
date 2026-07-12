@@ -12,7 +12,7 @@ Todos os projetos Flask estão localizados na pasta `src/`.
 ## 📦 Projetos
 
 - [x] Tutorial Flask
-- [ ] Banco de Problemas Matemáticos (em desenvolvimento)
+- [x] Banco de Problemas Matemáticos (Faltam apenas ajustes visuais)
 
 ## 📝 Objetivo
 
@@ -43,7 +43,20 @@ O primeiro projeto tem como objetivo fornecer um ambiente simples para registrar
 - HTML
 - CSS
 - Jinja2
-- Estrutura do Projeto
 ---
 
+---
+## 🖥️ Como executar
+Crie um ambiente virtual e o ative.   
+Abra em seu diretório a pasta raíz do projeto (project-flask)  
+Digite:
+- python - venv .venv
+- .venv\Scripts\activate  
+Instale as bibliotecas
+- pip install -r requirements.txt  
+Escolha qual projeto você quer rodar, e substituia "projeto" nos comandos abaixos pelo nome do projeto:
+flask --app src/projeto init-db
+flask --app src/projeto run 
+
+---
 O projeto segue a organização proposta pelo Tutorial Oficial do Flask, utilizando Application Factory, Blueprints e SQLite para persistência dos dados.

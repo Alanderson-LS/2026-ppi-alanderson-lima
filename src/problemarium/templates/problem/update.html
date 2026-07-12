@@ -16,9 +16,9 @@
     <label for="difficulty">Dificuldade</label>
     <select name ="difficulty" required> 
       <option value="" select disabled selected>Selecione uma dificuldade</option>
-      <option value="easy" {% if problem['difficulty'] == 'easy' %}selected{% endif %}>Fácil</option>
-      <option value="medium" {% if problem['difficulty'] == 'medium' %}selected{% endif %}>Médio</option>
-      <option value="hard" {% if problem['difficulty'] == 'hard' %}selected{% endif %}>Difícil</option>
+      <option value="easy" {% if problem['difficulty'] == 'fácil' %}selected{% endif %}>Fácil</option>
+      <option value="medium" {% if problem['difficulty'] == 'medio' %}selected{% endif %}>Médio</option>
+      <option value="hard" {% if problem['difficulty'] == 'dificil' %}selected{% endif %}>Difícil</option>
     </select>
     <label for="answer">Resposta</label>
     <textarea name="answer" id="answer" required>{{ request.form.get('answer', problem['answer']) }}</textarea>

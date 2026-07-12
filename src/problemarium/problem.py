@@ -31,7 +31,15 @@ def create():
         error = None
 
         if not title:
-            error = 'Title is required.'
+            error = 'O problema precisa de um título.'
+        elif not statement:
+            error = 'O problema precisa de um enunciado.'
+        elif not difficulty:
+            error = 'O problema precisa de uma dificuldade.'
+        elif not answer:
+            error = 'O problema precisa de uma resposta.'
+        elif not subject:
+            error = 'O problema precisa de um conteudo.'
 
         if error is not None:
             flash(error)
@@ -78,7 +86,15 @@ def update(id):
         error = None
 
         if not title:
-            error = 'Title is required.'
+            error = 'O problema precisa de um título.'
+        elif not statement:
+            error = 'O problema precisa de um enunciado.'
+        elif not difficulty:
+            error = 'O problema precisa de uma dificuldade.'
+        elif not answer:
+            error = 'O problema precisa de uma resposta.'
+        elif not subject:
+            error = 'O problema precisa de um conteudo.'
 
         if error is not None:
             flash(error)

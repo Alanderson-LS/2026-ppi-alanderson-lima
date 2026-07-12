@@ -1,18 +1,23 @@
 <!doctype html>
 <title>{% block title %}{% endblock %} - Problemarium</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<nav>
-  <h1>Problemarium</h1>
-  <ul>
-    {% if g.user %}
-      <li><span>{{ g.user['username'] }}</span>
-      <li><a href="{{ url_for('auth.logout') }}">Sair</a>
-    {% else %}
-      <li><a href="{{ url_for('auth.register') }}">Registrar</a>
-      <li><a href="{{ url_for('auth.login') }}">Entrar</a>
-    {% endif %}
-  </ul>
+<nav> 
+    <ul>
+      {% if g.user %}
+        <li><span>{{ g.user['username'] }}</span>
+        <li class="hero_button"><a href="{{ url_for('auth.logout') }}">Sair</a>
+      {% else %}
+        <li class="hero_button"><a href="{{ url_for('auth.register') }}">Registrar</a>
+        <li class="hero_button"><a href="{{ url_for('auth.login') }}">Entrar</a>
+      {% endif %}
+    </ul>
 </nav>
+<section class="hero">
+  <h1>Problemarium</h1>
+  <p>Um banco coletivo de questões de matemática</p>
+  <p>-------Σ-------</p>
+  <p>Resolva, compartilhe, e aprenda junto com os outros</p>
+</section>
 <section class="content">
   <header>
     {% block header %}{% endblock %}

@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Problem{% endblock %}</h1>
+  <h1>{% block title %}Problemas{% endblock %}</h1>
   {% if g.user %}
-    <a class="action" href="{{ url_for('problem.create') }}">New</a>
+    <a class="action" href="{{ url_for('problem.create') }}">Novo problema</a>
   {% endif %}
 {% endblock %}
 
