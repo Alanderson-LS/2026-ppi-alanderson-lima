@@ -4,15 +4,17 @@
     }
 }
 
-html, body {margin: 0; padding: 0; background: #121212;}
+html, body {margin: 0; padding: 0; background: #0a0a0a;}
 body::after {content: ""; position: fixed; left: 0; bottom: 0; width: 100%; height: 180px; pointer-events: none;background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.1),transparent);}
 .content {max-width: 1100px;margin: auto;background: #f5f5f5;padding: 30px;}
 h1 a { font-family: serif; color: #377ba8; margin: 1rem 0; }
 a { color: #377ba8; }
 hr { border: none; border-top: 1px solid lightgray; }
-nav { height: 60px; background: #202124; display: flex; justify-content: flex-end; align-items: center; padding: 0 40px;}
+nav{ height: 60px; background: #202124; display: flex; justify-content: flex-end; align-items: center; padding: 0 40px;}
 nav a{color: white; text-decoration: none; transition: 0.5s; padding: 10px 16px; border-radius: 8px; font-size: 2rem;}
 nav a:hover {color: #28b3ac; transform: translateY(-2px);}
+.username{color: white; text-decoration: none; transition: 0.5s; padding: 10px 16px; border-radius: 8px; font-size: 2rem;}
+.username:hover {color: #28b3ac; transform: translateY(-2px);}
 nav h1 { flex: auto; margin: 0; }
 nav h1 a { text-decoration: none; padding: 0.25rem 0.5rem; }
 nav ul  {display: flex; gap: 20px; list-style: none;}
@@ -43,3 +45,19 @@ input[type=submit] { align-self: start; min-width: 10em; }
 .problem-footer span{margin-right: 30px;}
 .subject-difficulty {background: #ececec;border-radius: 30px;padding: 4px 10px;font-size: .9rem;}
 .statement{margin: 20px 0; line-height: 1.7;}
+.new_problem{display: inline-block; padding: 10px 20px ;padding-bottom: 20px;background: #22c55e; align-items: center; justify-content: center; color: white; text-decoration: none; font-weight: bold; border-radius: 999px; transition: all .25s ease;box-shadow: 0 0 10px rgba(34,197,94,.45), 0 0 20px rgba(34,197,94,.25);}
+.new_problem:hover {background: #16a34a;transform: translateY(-2px) scale(1.03);box-shadow: 0 0 15px rgba(34,197,94,.75), 0 0 35px rgba(34,197,94,.45);}
+.content form {max-width: 850px; margin: 40px auto; padding: 35px; background: #ffffff; border-radius: 18px; box-shadow: 0 12px 30px rgba(0,0,0,.15);}
+.content input, .content textarea, .content select { width: 100%;  padding: 12px 15px; border: 2px solid #d9d9d9; border-radius: 10px; box-sizing: border-box; font-size: 1rem; transition: .2s; }
+.content label{ margin-top:20px; margin-bottom:8px; font-size:1rem; font-weight:600;}
+.content input:focus, .content textarea:focus, .content select:focus { outline: none; border-color: #28d9be; box-shadow: 0 0 10px rgba(109,40,217,.25); }
+textarea{ min-height:120px; }
+input[type="submit"][value="Salvar"]{ background:#22c55e; color:white; border:none; border-radius:999px; padding:14px 28px; font-size:1rem; font-weight:bold; cursor:pointer; transition:.2s; box-shadow:0 0 15px rgba(34,197,94,.35); }
+input[type="submit"][value="Salvar"]:hover{ transform:translateY(-2px); background:#16a34a; box-shadow:0 0 25px rgba(34,197,94,.6);}
+input[type="submit"][value="Apagar"]{ background:#ed0404; color:white; border:none; border-radius:999px; padding:14px 28px; font-size:1rem; font-weight:bold; cursor:pointer; transition:.2s; box-shadow:0 0 15px rgba(113, 1, 1, 0.35); }
+input[type="submit"][value="Apagar"]:hover{ transform:translateY(-2px); background:#ca1d1d; box-shadow:0 0 25px rgba(129, 9, 9, 0.6);}
+.Editar{ background:#22c55e; color:white; border:none; border-radius:999px; padding:14px 28px; font-size:1rem; font-weight:bold; cursor:pointer; transition:.2s; box-shadow:0 0 15px rgba(34,197,94,.35); }
+.Editar:hover{ transform:translateY(-2px); background:#16a34a; box-shadow:0 0 25px rgba(34,197,94,.6);}
+.Cancelar{ background:#ffbf00; color:white; border:none; border-radius:999px; padding:14px 28px; font-size:1rem; font-weight:bold; cursor:pointer; transition:.2s; box-shadow:0 0 15px rgba(138, 97, 1, 0.35); margin-bottom: 35px; text-align: center;}
+.Cancelar:hover{ transform:translateY(-2px); background:#ac5a03; box-shadow:0 0 25px rgba(209, 139, 0, 0.6);}
+.create_page{text-align: center;}

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Edit "{{ problem['title'] }}"{% endblock %}</h1>
+  <h1>{% block title %}Editar "{{ problem['title'] }}"{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
@@ -24,11 +24,11 @@
     <textarea name="answer" id="answer" required>{{ request.form.get('answer', problem['answer']) }}</textarea>
     <label for="resolution">Resolução (opcional)</label>
     <textarea name="resolution" id="resolution">{{ request.form.get('resolution', problem['resolution']) }}</textarea>
-    <a class="button" href="{{ url_for('problem.index') }}">Cancelar</a>
+    <a class="Cancelar" href="{{ url_for('problem.index') }}">Cancelar</a>
     <input type="submit" value="Salvar">  
   </form>
   <hr>
   <form action="{{ url_for('problem.delete', id=problem['id']) }}" method="post">
-    <input class="danger" type="submit" value="Delete" onclick="return confirm('Tem certeza?');">
+    <input class="danger" type="submit" value="Apagar" onclick="return confirm('Tem certeza?');">
   </form>
 {% endblock %}

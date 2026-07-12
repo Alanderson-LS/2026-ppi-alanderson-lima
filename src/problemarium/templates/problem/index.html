@@ -3,7 +3,7 @@
 {% block header %}
   <h1>{% block title %}Problemas{% endblock %}</h1>
   {% if g.user %}
-    <a class="action" href="{{ url_for('problem.create') }}">Novo problema</a>
+    <a class="new_problem" href="{{ url_for('problem.create') }}">Novo problema</a>
   {% endif %}
 {% endblock %}
 
@@ -33,7 +33,7 @@
             📅{{ problem['created'].strftime('%d/%m/%Y')}}
           </span>
         {% if g.user['id'] == problem['author_id'] %}
-          <a class="action" href="{{ url_for('problem.update', id=problem['id']) }}">Editar</a>
+          <a class="Editar" href="{{ url_for('problem.update', id=problem['id']) }}">Editar</a>
         {% endif %}
     </article>
     {% if not loop.last %}

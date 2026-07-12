@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Novo problema{% endblock %}</h1>
+  <h1 class="create_page">{% block title %}Novo problema{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
@@ -15,7 +15,7 @@
     <label for="difficulty">Dificuldade</label>
     <select name ="difficulty" required> 
       <option value="" select disabled selected>Selecione uma dificuldade</option>
-      <option value="fácil">Fácil</option>
+      <option value="facil">Fácil</option>
       <option value="medio">Médio</option>
       <option value="dificil">Difícil</option>
     </select>

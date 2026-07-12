@@ -4,7 +4,7 @@
 <nav> 
     <ul>
       {% if g.user %}
-        <li><span>{{ g.user['username'] }}</span>
+        <li><span class="username">{{ g.user['username'] }}</span>
         <li class="hero_button"><a href="{{ url_for('auth.logout') }}">Sair</a>
       {% else %}
         <li class="hero_button"><a href="{{ url_for('auth.register') }}">Registrar</a>
