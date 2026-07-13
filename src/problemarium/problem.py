@@ -10,12 +10,35 @@ bp = Blueprint('problem', __name__)
 
 @bp.route('/')
 def index():
+    title = request.args.get('title', '')
+    author = request.args.get('author', '')
+    subject = request.args.get('subject', '')
+    difficulty = request.args.get('difficulty', '') 
     db = get_db()
-    problems = db.execute(
-        'SELECT p.id, title, created, author_id, username, statement, subject, difficulty, answer, resolution'
-        ' FROM problem p JOIN user u ON p.author_id = u.id'
-        ' ORDER BY created DESC'
-    ).fetchall()
+    query = (
+        'SELECT p.id, p.title, p.created, p.author_id, u.username, p.statement, '
+        'p.subject, p.difficulty, p.answer, p.resolution '
+        'FROM problem p JOIN user u ON p.author_id = u.id '
+        'WHERE 1=1'
+    )
+
+    params = []
+    if title:
+        query += " AND title LIKE ?"
+        params.append(f"%{title}%")
+    if author:
+        query += " AND username LIKE ?"
+        params.append(f"%{author}%")
+    if difficulty:
+        query += " AND difficulty = ?"
+        params.append(difficulty)
+    if subject:
+        query += " AND subject LIKE ?"
+        params.append(f"%{subject}%")
+
+    query += " ORDER BY created DESC"
+
+    problems = db.execute(query, params).fetchall()
     return render_template('problem/index.html', problems=problems)
 
 @bp.route('/create', methods=('GET', 'POST'))

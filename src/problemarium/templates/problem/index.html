@@ -1,10 +1,40 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Problemas{% endblock %}</h1>
-  {% if g.user %}
-    <a class="new_problem" href="{{ url_for('problem.create') }}">Novo problema</a>
-  {% endif %}
+  <header class="page_header">
+    <h1>{% block title %}Problemas{% endblock %}</h1>
+    {% if g.user %}
+      <a class="new_problem" href="{{ url_for('problem.create') }}">Novo problema</a>
+    {% endif %}
+  </header>
+  <form method="get" class="filter_form">
+    <h3>Filtrar problemas</h3>
+    <div class="filter_search">
+      <div>
+        <label>Título</label>
+        <input type="text" name="title" value="{{ request.args.get('title', '') }}">
+      </div>
+      <div>
+        <label>Autor</label>
+        <input type="text" name="author" value="{{ request.args.get('author', '') }}">
+      </div>
+      <div>
+        <label>Assunto</label>
+        <input type="text" name="subject" value="{{ request.args.get('subject', '') }}">
+      </div>
+      <div>
+        <label>Dificuldade</label>
+        <select name="difficulty">
+            <option value=""{% if request.args.get('difficulty') == '' %}selected{% endif %}>Todas</option>
+            <option value="fácil"{% if request.args.get('difficulty') == 'fácil' %}selected{% endif %}>Fácil</option>
+            <option value="medio"{% if request.args.get('difficulty') == 'medio' %}selected{% endif %}>Médio</option>
+            <option value="dificil"{% if request.args.get('difficulty') == 'dificil' %}selected{% endif %}>Difícil</option>
+        </select>
+      </div>
+  </div>
+    <input type="submit" value="Pesquisar">
+
+</form>
 {% endblock %}
 
 {% block content %}
