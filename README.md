@@ -50,13 +50,13 @@ O primeiro projeto tem como objetivo fornecer um ambiente simples para registrar
 Crie um ambiente virtual e o ative.   
 Abra em seu diretório a pasta raíz do projeto (project-flask)  
 Digite:
-- python - venv .venv
+- python -m venv .venv
 - .venv\Scripts\activate  
 Instale as bibliotecas
 - pip install -r requirements.txt  
-Escolha qual projeto você quer rodar, e substituia "projeto" nos comandos abaixos pelo nome do projeto:
-flask --app src/projeto init-db
-flask --app src/projeto run 
+Escolha qual projeto você quer rodar, e substituia "projeto" nos comandos abaixos pelo nome do projeto: <br>
+Flask --app src/projeto init-db   <br>
+Flask --app src/projeto run 
 
 ---
 O projeto segue a organização proposta pelo Tutorial Oficial do Flask, utilizando Application Factory, Blueprints e SQLite para persistência dos dados.
