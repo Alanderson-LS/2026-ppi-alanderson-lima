@@ -24,19 +24,19 @@ def index():
 
     params = []
     if title:
-        query += " AND title LIKE ?"
+        query += " AND p.title LIKE ?"
         params.append(f"%{title}%")
     if author:
-        query += " AND username LIKE ?"
+        query += " AND u.username LIKE ?"
         params.append(f"%{author}%")
     if difficulty:
-        query += " AND difficulty = ?"
+        query += " AND p.difficulty = ?"
         params.append(difficulty)
     if subject:
-        query += " AND subject LIKE ?"
+        query += " AND p.subject LIKE ?"
         params.append(f"%{subject}%")
 
-    query += " ORDER BY created DESC"
+    query += " ORDER BY p.created DESC"
 
     problems = db.execute(query, params).fetchall()
     return render_template('problem/index.html', problems=problems)
@@ -80,7 +80,7 @@ def create():
 
 def get_problem(id, check_author=True):
     problem = get_db().execute(
-        'SELECT p.id, title, statement, created, author_id, username, subject, difficulty, answer, resolution'
+        'SELECT p.id, p.title, p.statement, p.created, p.author_id, u.username, p.subject, p.difficulty, p.answer, p.resolution'
         ' FROM problem p JOIN user u ON p.author_id = u.id'
         ' WHERE p.id = ?',
         (id,)
